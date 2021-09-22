@@ -35,16 +35,8 @@ def buyLotsOfFruit(orderList):
     totalCost = 0.0
     "*** YOUR CODE HERE ***"
     for i in range(0, len(orderList)):
-        if orderList[i][0] == 'apples':
-            totalCost += orderList[i][1] * fruitPrices['apples']
-        elif orderList[i][0] == 'oranges':
-            totalCost += orderList[i][1] * fruitPrices['oranges']
-        elif orderList[i][0] == 'pears':
-            totalCost += orderList[i][1] * fruitPrices['pears']
-        elif orderList[i][0] == 'limes':
-            totalCost += orderList[i][1] * fruitPrices['limes']
-        elif orderList[i][0] == 'strawberries':
-            totalCost += orderList[i][1] * fruitPrices['strawberries']
+        if orderList[i][0] in list(fruitPrices):
+            totalCost += orderList[i][1] * fruitPrices[orderList[i][0]]
         else:
             return None
     return totalCost
