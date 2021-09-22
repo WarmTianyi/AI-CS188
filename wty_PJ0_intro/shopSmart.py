@@ -29,23 +29,12 @@ def shopSmart(orderList, fruitShops):
         fruitShops: List of FruitShops
     """
     "*** YOUR CODE HERE ***"
+    import numpy as np
     totalCost = [0 for k in range(len(fruitShops))]
-    min = 999
+    min = np.inf
     for n in range(0, len(fruitShops)):
         for i in range(0, len(orderList)):
             totalCost[n] += orderList[i][1] * fruitShops[n].fruitPrices[orderList[i][0]]
-            #if orderList[i][0] == 'apples':
-                #totalCost[n] += orderList[i][1] * fruitShops[n].fruitPrices['apples']
-            #elif orderList[i][0] == 'oranges':
-                #totalCost[n] += orderList[i][1] * fruitShops[n].fruitPrices['oranges']
-            #elif orderList[i][0] == 'pears':
-                #totalCost[n] += orderList[i][1] * fruitShops[n].fruitPrices['pears']
-            #elif orderList[i][0] == 'limes':
-                #totalCost[n] += orderList[i][1] * fruitShops[n].fruitPrices['limes']
-            #elif orderList[i][0] == 'strawberries':
-                #totalCost[n] += orderList[i][1] * fruitShops[n].fruitPrices['strawberries']
-            #else:
-                #return None
         if totalCost[n] < min:
             min = totalCost[n]
             index = n
